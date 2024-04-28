@@ -40,7 +40,7 @@ sudo systemctl enable libvirtd
 
 #===============#
 #remove native ff and libreoffice packages to replace them with flatpaks
-sudo dnf remove firefox *libreoffice* cheese -y
+sudo dnf remove firefox *libreoffice* rhythmbox -y
 #===============#
 
 #===============#
@@ -65,7 +65,7 @@ sudo dnf install code -y
 #===============#
 #install flatpaks
 flatpak update -y
-flatpak install flathub org.chromium.Chromium org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.github.tchx84.Flatseal de.haeckerfelix.Fragments com.usebottles.bottles org.telegram.desktop com.spotify.Client org.gnome.World.PikaBackup io.github.giantpinkrobots.flatsweep
+flatpak install flathub org.chromium.Chromium org.mozilla.firefox io.bassi.Amberol org.libreoffice.LibreOffice com.bitwarden.desktop com.github.tchx84.Flatseal de.haeckerfelix.Fragments com.usebottles.bottles org.telegram.desktop com.spotify.Client org.gnome.World.PikaBackup io.github.giantpinkrobots.flatsweep
 org.torproject.torbrowser-launcher com.github.wwmm.easyeffects io.mpv.Mpv com.discordapp.Discord -y
 #===============#
 
