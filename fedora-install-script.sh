@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #fedora workstation installation script
-#dos2unix fedora-script.sh!!!!!!!
 #===============#
 #improve dnf performance
 echo 'max_parallel_downloads=10
