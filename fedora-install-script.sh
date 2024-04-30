@@ -81,15 +81,13 @@ set ts=4 sw=4" > ~/.vimrc
 #===============#
 
 #===============#
-#configure quad9 dns
+#configure cloudflare dns
 if [[ ! -f /etc/systemd/resolved.conf ]]
 then
 	sudo cp /usr/lib/systemd/resolved.conf /etc/systemd/resolved.conf
-	sudo sed -i 's/#DNS=/DNS=9.9.9.9 149.112.112.112 2620:fe::fe 2620:fe::9/' /etc/systemd/resolved.conf
-	sudo sed -i 's/#DNSOverTLS=no/DNSOverTLS=yes/' /etc/systemd/resolved.conf
+	sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1' /etc/systemd/resolved.conf
 else
-	sudo sed -i 's/#DNS=/DNS=9.9.9.9 149.112.112.112 2620:fe::fe 2620:fe::9/' /etc/systemd/resolved.conf
-	sudo sed -i 's/#DNSOverTLS=no/DNSOverTLS=yes/' /etc/systemd/resolved.conf
+	sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1' /etc/systemd/resolved.conf
 fi
 #===============#
 
