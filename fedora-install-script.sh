@@ -28,7 +28,7 @@ sudo dnf groupupdate sound-and-video -y
 
 #===============#
 #install native packages 
-sudo dnf install akmods git neofetch pandoc htop mc texlive-scheme-basic wireguard-tools gnome-tweaks gnome-console gnome-themes-extra adw-gtk3-theme snapshot
+sudo dnf install akmods git fastfetch pandoc htop mc texlive-scheme-basic wireguard-tools gnome-tweaks gnome-console gnome-themes-extra adw-gtk3-theme snapshot
 #===============#
 
 #===============#
@@ -85,9 +85,15 @@ set ts=4 sw=4" > ~/.vimrc
 if [[ ! -f /etc/systemd/resolved.conf ]]
 then
 	sudo cp /usr/lib/systemd/resolved.conf /etc/systemd/resolved.conf
-	sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1' /etc/systemd/resolved.conf
+	sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1/' /etc/systemd/resolved.conf
+ 	sudo sed -i 's/#Domains=/Domains=~./' /etc/systemd/resolved.conf
+  	sudo sed -i 's/#DNSSEC=no/DNSSEC=yes/' /etc/systemd/resolved.conf
+   	sudo sed -i 's/#DNSOverTLS=no/DNSOverTLS=yes/' /etc/systemd/resolved.conf
 else
-	sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1' /etc/systemd/resolved.conf
+	sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1/' /etc/systemd/resolved.conf
+ 	sudo sed -i 's/#Domains=/Domains=~./' /etc/systemd/resolved.conf
+  	sudo sed -i 's/#DNSSEC=no/DNSSEC=yes/' /etc/systemd/resolved.conf
+   	sudo sed -i 's/#DNSOverTLS=no/DNSOverTLS=yes/' /etc/systemd/resolved.conf
 fi
 #===============#
 
