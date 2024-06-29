@@ -32,9 +32,9 @@ sudo dnf install akmods git fastfetch pandoc htop mc texlive-scheme-basic wiregu
 #===============#
 
 #===============#
-#remove gnome-boxes and install cockpit
+#remove gnome-boxes and install virt-manager
 sudo dnf remove gnome-boxes -y
-sudo dnf install cockpit cockpit-machines libvirt virt-viewer -y
+sudo dnf install @Virtualization -y
 sudo systemctl enable libvirtd
 #===============#
 
