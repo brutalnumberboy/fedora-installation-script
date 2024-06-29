@@ -103,11 +103,6 @@ gsettings set org.gnome.shell.app-switcher current-workspace-only 'true' #switch
 #===============#
 
 #===============#
-#install easyeffects loudness equalizer preset
-curl https://raw.githubusercontent.com/Digitalone1/EasyEffects-Presets/master/LoudnessEqualizer.json -o ~/.var/app/com.github.wwmm.easyeffects/config/easyeffects/output/LoudnessEqualizer.json
-#===============#
-
-#===============#
 #restart the system
 reboot
 #===============#
