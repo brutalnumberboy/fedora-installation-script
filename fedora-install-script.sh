@@ -7,10 +7,12 @@ echo 'max_parallel_downloads=10
 fastestmirror=True' | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 #===============#
 
+
 #===============#
 #upgrade the system
 sudo dnf upgrade -y 
 #===============#
+
 
 #===============#
 #add rpmfusion repos
@@ -47,11 +49,13 @@ dnf check-update
 sudo dnf install code -y
 #===============#
 
+
 #===============#
 #install flatpaks
 flatpak update -y
-flatpak install flathub org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.usebottles.bottles org.telegram.desktop com.spotify.Client  org.torproject.torbrowser-launcher com.github.wwmm.easyeffects io.mpv.Mpv -y
+flatpak install flathub com.valvesoftware.Steam io.freetubeapp.FreeTube dev.vencord.Vesktop org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.usebottles.bottles org.telegram.desktop com.spotify.Client  org.torproject.torbrowser-launcher com.github.wwmm.easyeffects io.mpv.Mpv -y
 #===============#
+
 
 #===============#
 #configure vim
