@@ -59,7 +59,7 @@ sudo dnf install code -y
 #===============#
 #install flatpaks
 flatpak update -y
-flatpak install flathub com.valvesoftware.Steam io.freetubeapp.FreeTube dev.vencord.Vesktop org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.usebottles.bottles org.telegram.desktop org.torproject.torbrowser-launcher io.mpv.Mpv -y
+flatpak install flathub com.valvesoftware.Steam org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.usebottles.bottles org.telegram.desktop org.torproject.torbrowser-launcher io.mpv.Mpv -y
 #===============#
 
 
