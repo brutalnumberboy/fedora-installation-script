@@ -16,19 +16,25 @@ sudo dnf upgrade -y
 
 #===============#
 #add rpmfusion repos
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-sudo dnf groupupdate core -y
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
-sudo dnf groupupdate sound-and-video -y
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+sudo dnf update @core
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf install rpmfusion-nonfree-release-tainted
+sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #===============#
 
 
 #===============#
 #install native packages 
-sudo dnf install akmods git fastfetch htop mc wireguard-tools
+sudo dnf install akmods git fastfetch htop mc wireguard-tools flatpak
 #===============#
 
+#===============#
+#enable flatub (need on KDE spin)
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+#===============#
 
 #===============#
 #remove native ff and libreoffice packages to replace them with flatpaks
@@ -53,7 +59,7 @@ sudo dnf install code -y
 #===============#
 #install flatpaks
 flatpak update -y
-flatpak install flathub com.valvesoftware.Steam io.freetubeapp.FreeTube dev.vencord.Vesktop org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.usebottles.bottles org.telegram.desktop com.spotify.Client  org.torproject.torbrowser-launcher com.github.wwmm.easyeffects io.mpv.Mpv -y
+flatpak install flathub com.valvesoftware.Steam io.freetubeapp.FreeTube dev.vencord.Vesktop org.mozilla.firefox org.libreoffice.LibreOffice com.bitwarden.desktop com.usebottles.bottles org.telegram.desktop org.torproject.torbrowser-launcher io.mpv.Mpv -y
 #===============#
 
 
