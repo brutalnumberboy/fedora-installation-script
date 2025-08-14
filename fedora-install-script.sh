@@ -38,7 +38,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 #===============#
 #remove native ff and libreoffice packages to replace them with flatpaks
-sudo dnf remove firefox *libreoffice* -y
+sudo dnf remove firefox *libreoffice* kmahjongg kmines kpat elisa-player dragon -y
 #===============#
 
 #===============#
